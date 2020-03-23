@@ -1,0 +1,15 @@
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  function reps(string,n){
+    let acc = ""
+    for (let i = 0; i<n;i++){
+      acc+=string;
+    }
+    return acc
+  }
+  if (num>0){str = reps(str,num)} else {str = ""}
+  
+  return str;
+}
+
+repeatStringNumTimes("abc", 3);

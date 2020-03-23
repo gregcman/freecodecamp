@@ -1,0 +1,9 @@
+function mutation(arr) {
+  let [str1,str2] = arr.map((str)=>str.toLowerCase().split(""));
+  
+  
+  console.log(str1 + " " + str2)
+  return str2.filter((n)=>str1.indexOf(n)!==-1).length === str2.length;
+}
+
+mutation(["hello", "hey"]);

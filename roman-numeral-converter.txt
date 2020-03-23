@@ -1,0 +1,25 @@
+//https://en.wikipedia.org/wiki/Roman_numerals
+function convertToRoman(num) {
+    let ones = num % 10;
+    num -= ones;
+    let tens = num % 100;
+    num -= tens;
+    let hundreds = num % 1000;
+    num -= hundreds;
+    let thousands = num % 10000;
+
+    let ans =
+    ["","M", "MM", "MMM"][thousands/1000]+
+    ["","C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"][hundreds/100]+
+    ["","X","XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"][tens/10] +
+    ["","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"][ones] ;
+    console.log(ans);
+    return ans;
+}
+
+convertToRoman(36);
+
+//I, II, III, IV, V, VI, VII, VIII, IX, X 1-10
+//X, XX, XXX, XL, L, LX, LXX, LXXX, XC, C. 10-100
+//C, CC, CCC, CD, D, DC, DCC, DCCC, CM, M 100-1000
+//M, MM, MMM 1000 2000 3000

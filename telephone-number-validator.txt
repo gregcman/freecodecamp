@@ -1,0 +1,8 @@
+var phoneRegex = /^1? *\(\d{3}\)[- ]*\d{3}[- ]*\d{4}$|^1? *?\d{3}[- ]*\d{3}[- ]*\d{4}$/
+
+function telephoneCheck(str) {
+  // Good luck!
+  return phoneRegex.test(str);
+}
+
+telephoneCheck("555-555-5555");

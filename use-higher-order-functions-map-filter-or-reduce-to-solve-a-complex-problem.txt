@@ -1,0 +1,15 @@
+const squareList = (arr) => {
+  // only change code below this line
+  function integerP(n){
+    return n === Math.round(n);
+  }
+  function positiveP(n){
+    return n >0;
+  }
+  return arr.filter(integerP).filter(positiveP).map(n=>n*n);
+  // only change code above this line
+};
+
+// test your code
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);

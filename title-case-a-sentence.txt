@@ -1,0 +1,12 @@
+function titleCase(str) {
+  let whitespacePrecedes = true;
+  let newStr = "";
+  for (let char of str){
+    char = whitespacePrecedes ? char.toUpperCase() : char.toLowerCase();
+    newStr += char;
+    whitespacePrecedes = (char === " ");
+  }
+  return newStr;
+}
+
+titleCase("I'm a little tea pot");

@@ -1,0 +1,32 @@
+//ascii 65 to 90
+//fromCharCode
+//charCodeAt
+function rot13(str) { // LBH QVQ VG!
+  let newStr = "";
+  for(let char of str){
+    let ascii = char.charCodeAt(0);
+    let newLetter;
+    if(isCapitalLetter(ascii)){
+      newLetter = String.fromCharCode(shiftLetter(13,ascii));
+    } else {
+      newLetter = char;
+    }
+    newStr+= newLetter;
+  }
+  console.log(newStr);
+  return newStr;
+}
+
+function modulo(a, b) {
+  return ((a % b) + b) % b
+}
+
+function isCapitalLetter(ascii){
+  return 65<=ascii&&ascii<=90;
+}
+function shiftLetter(shift,capitalAscii){
+  return 65+modulo((capitalAscii-65+shift),26);
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
